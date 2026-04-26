@@ -74,20 +74,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openLightbox(item) {
     const label = item.querySelector('.gallery-label')?.textContent || '';
+    const img   = item.querySelector('img');
+
     lightbox = document.createElement('div');
     lightbox.style.cssText = `
       position:fixed;inset:0;background:rgba(9,12,20,0.95);z-index:9999;
       display:flex;flex-direction:column;align-items:center;justify-content:center;
       cursor:pointer;animation:fadeIn .2s ease;
     `;
+
+    const mediaBlock = img
+      ? `<img src="${img.src}" alt="${label}"
+             style="max-width:100%;max-height:70vh;object-fit:contain;border:1px solid #1C2338;">`
+      : `<div style="border:1px dashed #1C2338;padding:80px 40px;color:#3E455A;
+                     font-family:'Rajdhani',sans-serif;font-size:13px;letter-spacing:1px;">
+           📁&nbsp; Remplace ce bloc par ton image réelle<br>
+           <span style="font-size:11px;margin-top:6px;display:block;">Format recommandé : JPG/PNG, 1280×720 px</span>
+         </div>`;
+
     lightbox.innerHTML = `
-      <div style="border:1px solid #1C2338;background:#0E1220;padding:32px;max-width:700px;width:90%;text-align:center;">
+      <div style="border:1px solid #1C2338;background:#0E1220;padding:32px;max-width:900px;width:92%;text-align:center;">
         <div style="font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:600;color:#E8EAF0;margin-bottom:8px;">${label}</div>
         <div style="font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:2px;color:#7A8099;text-transform:uppercase;margin-bottom:24px;">Autonova Industries — SF-27</div>
-        <div style="border:1px dashed #1C2338;padding:80px 40px;color:#3E455A;font-family:'Rajdhani',sans-serif;font-size:13px;letter-spacing:1px;">
-          📁&nbsp; Remplace ce bloc par ton image réelle<br>
-          <span style="font-size:11px;margin-top:6px;display:block;">Format recommandé : JPG/PNG, 1280×720 px</span>
-        </div>
+        ${mediaBlock}
         <div style="margin-top:16px;font-family:'Rajdhani',sans-serif;font-size:11px;color:#3E455A;">Cliquer pour fermer</div>
       </div>
     `;
