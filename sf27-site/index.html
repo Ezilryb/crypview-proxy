@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SF-27 — Autonova Industries</title>
+  <meta name="description" content="Projet de voiture robot Arduino autonome — SF-27 par Autonova Industries, 1ère Sciences de l'Ingénieur.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<button id="hamburger" aria-label="Menu">&#9776;</button>
+
+<div id="app">
+
+  <!-- ════════════════════════════════════
+       SIDEBAR NAVIGATION
+  ════════════════════════════════════ -->
+  <nav id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-badge">Autonova Industries</div>
+      <div class="logo-name">SF-27</div>
+      <div class="logo-sub">Voiture Autonome</div>
+    </div>
+
+    <ul class="sidebar-nav" style="list-style:none;">
+      <li class="nav-section-label">Navigation</li>
+      <li class="nav-item active" data-page="accueil">
+        <span class="nav-icon">⬡</span> Accueil
+      </li>
+      <li class="nav-item" data-page="presentation">
+        <span class="nav-icon">◈</span> Présentation
+      </li>
+      <li class="nav-item" data-page="developpement">
+        <span class="nav-icon">⟨/⟩</span> Développement
+      </li>
+      <li class="nav-item" data-page="galerie">
+        <span class="nav-icon">⬚</span> Galerie
+      </li>
+      <li class="nav-item" data-page="equipe">
+        <span class="nav-icon">◉</span> Équipe
+      </li>
+      <li class="nav-item" data-page="remerciements">
+        <span class="nav-icon">✦</span> Remerciements
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      1ère Sciences de l'Ingénieur<br>
+      Année 2025–2026
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════ -->
+  <main id="main">
+
+    <!-- ┌──────────────────────────────────
+         PAGE : ACCUEIL
+         └────────────────────────────────── -->
+    <section id="accueil" class="page active">
+
+      <div class="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-circuit"></div>
+
+        <div style="position:relative; z-index:2;">
+          <div class="hero-tag">Projet 1ère SI · 2025–2026</div>
+
+          <h1 class="hero-title">
+            SUPER-CAR<br>
+            <span class="highlight">AUTONOME</span>
+          </h1>
+
+          <div class="hero-subtitle">SF-27 · Autonova Industries</div>
+
+          <p class="hero-desc">
+            Un robot mobile piloté par Arduino, capable de naviguer de façon
+            autonome grâce à une caméra de vision embarquée, une modélisation 3D
+            de sa coque réalisée sous Blender, et un code embarqué optimisé
+            en C/C++.
+          </p>
+
+          <div class="hero-cta">
+            <button class="btn-primary" data-goto="presentation">
+              ▶ Découvrir le projet
+            </button>
+            <button class="btn-secondary" data-goto="developpement">
+              ⟨/⟩ Voir le code
+            </button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-num" data-counter="3" data-suffix="">3</div>
+              <div class="stat-label">Membres<br>d'équipe</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num" data-counter="250" data-suffix="+">250+</div>
+              <div class="stat-label">Lignes<br>de code</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num" data-counter="1" data-suffix="">1</div>
+              <div class="stat-label">Caméra<br>embarquée</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num" data-counter="1" data-suffix="">1</div>
+              <div class="stat-label">Coque<br>modélisée</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car SVG illustration -->
+        <svg class="hero-car-svg" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg">
+          <!-- Chassis -->
+          <rect x="40" y="140" width="440" height="70" rx="8" fill="#131828" stroke="#1C2338" stroke-width="1.5"/>
+          <!-- Body -->
+          <path d="M80 140 Q90 80 160 60 L360 60 Q430 80 440 140 Z" fill="#0E1220" stroke="#1C2338" stroke-width="1.5"/>
+          <!-- Cockpit glass -->
+          <path d="M170 60 Q185 25 200 20 L320 20 Q335 25 350 60 Z" fill="#192035" stroke="#00C8FF" stroke-width="1" opacity="0.8"/>
+          <!-- Racing stripe -->
+          <rect x="40" y="165" width="440" height="6" rx="2" fill="#FF5500" opacity="0.7"/>
+          <!-- Side vent lines -->
+          <line x1="80" y1="110" x2="120" y2="110" stroke="#FF5500" stroke-width="1.5" opacity="0.5"/>
+          <line x1="80" y1="118" x2="110" y2="118" stroke="#FF5500" stroke-width="1" opacity="0.3"/>
+          <line x1="400" y1="110" x2="440" y2="110" stroke="#FF5500" stroke-width="1.5" opacity="0.5"/>
+          <line x1="410" y1="118" x2="440" y2="118" stroke="#FF5500" stroke-width="1" opacity="0.3"/>
+          <!-- Front camera -->
+          <rect x="22" y="148" width="24" height="18" rx="3" fill="#0E1220" stroke="#00C8FF" stroke-width="1.2"/>
+          <circle cx="34" cy="157" r="6" fill="#131828" stroke="#00C8FF" stroke-width="1"/>
+          <circle cx="34" cy="157" r="3.5" fill="#00C8FF" opacity="0.6"/>
+          <circle cx="34" cy="157" r="1.5" fill="#fff" opacity="0.9"/>
+          <!-- Camera FOV lines -->
+          <path d="M22 148 L8 132" stroke="#00C8FF" stroke-width="0.8" fill="none" opacity="0.35" stroke-dasharray="3,2"/>
+          <path d="M22 166 L8 182" stroke="#00C8FF" stroke-width="0.8" fill="none" opacity="0.35" stroke-dasharray="3,2"/>
+          <path d="M8 132 L8 182" stroke="#00C8FF" stroke-width="0.6" fill="none" opacity="0.2"/>
+          <!-- Wheels -->
+          <circle cx="130" cy="210" r="38" fill="#0A0F1A" stroke="#1C2338" stroke-width="2"/>
+          <circle cx="130" cy="210" r="24" fill="#131828" stroke="#FF5500" stroke-width="1.5"/>
+          <circle cx="130" cy="210" r="8" fill="#FF5500" opacity="0.8"/>
+          <circle cx="390" cy="210" r="38" fill="#0A0F1A" stroke="#1C2338" stroke-width="2"/>
+          <circle cx="390" cy="210" r="24" fill="#131828" stroke="#FF5500" stroke-width="1.5"/>
+          <circle cx="390" cy="210" r="8" fill="#FF5500" opacity="0.8"/>
+          <!-- Wheel spokes -->
+          <line x1="130" y1="186" x2="130" y2="234" stroke="#FF5500" stroke-width="1.5" opacity="0.5"/>
+          <line x1="106" y1="210" x2="154" y2="210" stroke="#FF5500" stroke-width="1.5" opacity="0.5"/>
+          <line x1="113" y1="193" x2="147" y2="227" stroke="#FF5500" stroke-width="1" opacity="0.3"/>
+          <line x1="147" y1="193" x2="113" y2="227" stroke="#FF5500" stroke-width="1" opacity="0.3"/>
+          <line x1="390" y1="186" x2="390" y2="234" stroke="#FF5500" stroke-width="1.5" opacity="0.5"/>
+          <line x1="366" y1="210" x2="414" y2="210" stroke="#FF5500" stroke-width="1.5" opacity="0.5"/>
+          <line x1="373" y1="193" x2="407" y2="227" stroke="#FF5500" stroke-width="1" opacity="0.3"/>
+          <line x1="407" y1="193" x2="373" y2="227" stroke="#FF5500" stroke-width="1" opacity="0.3"/>
+          <!-- Arduino board suggestion -->
+          <rect x="200" y="75" width="120" height="55" rx="4" fill="#143214" stroke="#228B22" stroke-width="1" opacity="0.9"/>
+          <rect x="210" y="82" width="100" height="40" rx="2" fill="#1a4a1a" opacity="0.8"/>
+          <circle cx="220" cy="92" r="3" fill="#00FF00" opacity="0.7"/>
+          <rect x="225" y="88" width="6" height="4" rx="1" fill="#228B22"/>
+          <rect x="234" y="88" width="6" height="4" rx="1" fill="#228B22"/>
+          <rect x="243" y="88" width="6" height="4" rx="1" fill="#228B22"/>
+          <!-- Label Arduino -->
+          <text x="260" y="115" font-family="monospace" font-size="9" fill="#00C8FF" text-anchor="middle" opacity="0.8">ARDUINO</text>
+          <!-- Glow effect under car -->
+          <ellipse cx="260" cy="248" rx="200" ry="8" fill="#FF5500" opacity="0.1"/>
+          <!-- Antenna / sensors on top -->
+          <line x1="260" y1="20" x2="260" y2="5" stroke="#00C8FF" stroke-width="1" opacity="0.6"/>
+          <circle cx="260" cy="4" r="2" fill="#00C8FF" opacity="0.8"/>
+        </svg>
+      </div>
+
+      <!-- Quick overview cards -->
+      <div class="section-wrap" style="padding-top: 0;">
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-icon">🤖</div>
+            <div class="card-title">Autonomie totale</div>
+            <div class="card-body">La SF-27 détecte les obstacles et analyse son environnement en temps réel grâce à une caméra embarquée et à une logique de vision par ordinateur embarquée en C/C++.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">🎨</div>
+            <div class="card-title">Modélisation 3D</div>
+            <div class="card-body">La coque aérodynamique a été conçue sous Blender. Chaque surface a été pensée pour réduire la traînée tout en étant imprimable en 3D.</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">⚙️</div>
+            <div class="card-title">Code embarqué</div>
+            <div class="card-body">Le firmware Arduino a été construit à partir d'une base de départ puis enrichi : gestion des moteurs, évitement d'obstacles, et paramétrage des capteurs.</div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="page-footer">
+        <span>SF-27 · Autonova Industries · 2025–2026</span>
+        <span class="footer-logo">1ÈRE SI</span>
+      </footer>
+    </section>
+
+
+    <!-- ┌──────────────────────────────────
+         PAGE : PRÉSENTATION DU PROJET
+         └────────────────────────────────── -->
+    <section id="presentation" class="page">
+      <div class="section-wrap">
+
+        <header class="section-header">
+          <div class="section-tag">Notre projet</div>
+          <h2 class="section-title">Présentation du projet</h2>
+          <p class="section-desc">
+            La SF-27 est une voiture robot Arduino conçue pour se déplacer de façon
+            entièrement autonome. Ce projet nous a permis de mobiliser des compétences
+            en électronique, programmation et modélisation 3D.
+          </p>
+        </header>
+
+        <!-- Objectif & Contexte -->
+        <div class="highlight-row" style="margin-bottom:40px;">
+          <div class="highlight-icon">🎯</div>
+          <div>
+            <div class="highlight-title">Objectif du projet</div>
+            <div class="highlight-body">
+              Concevoir, programmer et modéliser une voiture robot capable de naviguer dans un environnement
+              inconnu sans intervention humaine. Le projet articule trois domaines : la programmation embarquée
+              (Arduino / C++), la conception mécanique (modélisation 3D sous Blender), et l'étude
+              aérodynamique (calcul de traînée).
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-row blue" style="margin-bottom:40px;">
+          <div class="highlight-icon">📋</div>
+          <div>
+            <div class="highlight-title">Contexte scolaire</div>
+            <div class="highlight-body">
+              Ce projet a été réalisé en classe de 1ère Sciences de l'Ingénieur, dans le cadre d'un travail de
+              groupe visant à appliquer les notions du programme (systèmes automatisés, étude fonctionnelle,
+              modélisation numérique). L'entreprise fictive "Autonova Industries" représente notre groupe.
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Timeline des étapes -->
+        <h3 style="font-family:var(--font-label);font-size:20px;font-weight:600;margin-bottom:32px;color:var(--text-main);">
+          Étapes clés du projet
+        </h3>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-phase">Phase 1</div>
+            <div class="timeline-title">Analyse du besoin & choix technologiques</div>
+            <div class="timeline-desc">
+              Définition des fonctions de service du robot (navigation, détection, arrêt d'urgence).
+              Comparaison des capteurs disponibles (caméra, ultrason, infrarouge). Choix de la carte
+              Arduino Uno comme unité de contrôle et d'une caméra pour la détection visuelle.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-phase">Phase 2</div>
+            <div class="timeline-title">Programmation embarquée</div>
+            <div class="timeline-desc">
+              Développement du code de base à partir d'un squelette fourni. Ajout progressif des
+              fonctions d'évitement, de gestion des moteurs pas à pas, de calibration des seuils
+              de détection et d'une routine de retour en arrière en cas d'obstacle frontal.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-phase">Phase 3</div>
+            <div class="timeline-title">Modélisation 3D de la coque sous Blender</div>
+            <div class="timeline-desc">
+              Conception d'une coque aérodynamique inspirée des monoplaces de Formule E.
+              Travail sur les courbes de carrosserie, les entrées d'air, et la compatibilité avec
+              les dimensions du châssis physique. Rendu final en PBR.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-phase">Phase 4</div>
+            <div class="timeline-title">Étude aérodynamique (partielle)</div>
+            <div class="timeline-desc">
+              Tentative de simulation de traînée sous SolidWorks Flow Simulation. Des bugs techniques
+              liés à la licence et aux maillages ont empêché la finalisation. Les calculs théoriques
+              du coefficient Cx ont été réalisés manuellement à la place.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-phase">Phase 5</div>
+            <div class="timeline-title">Assemblage, tests et bilan</div>
+            <div class="timeline-desc">
+              Intégration de l'électronique dans le châssis. Tests de navigation sur parcours
+              balisé. Identification et correction des bugs (décalage de servo, seuil de détection
+              trop faible). Rédaction du rapport et de la présentation finale.
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Diagramme fonctionnel simple -->
+        <h3 style="font-family:var(--font-label);font-size:20px;font-weight:600;margin-bottom:24px;color:var(--text-main);">
+          Architecture fonctionnelle
+        </h3>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:48px;">
+          <div style="background:var(--bg-card);border:1px solid var(--border);padding:20px;text-align:center;">
+            <div style="font-size:24px;margin-bottom:10px;">📷</div>
+            <div style="font-family:var(--font-label);font-size:14px;font-weight:600;color:var(--accent-b);letter-spacing:1px;text-transform:uppercase;">Caméra embarquée</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">Acquisition de l'image</div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;color:var(--accent-o);font-size:20px;">→</div>
+          <div style="background:var(--bg-card);border:1px solid var(--border);padding:20px;text-align:center;">
+            <div style="font-size:24px;margin-bottom:10px;">🧠</div>
+            <div style="font-family:var(--font-label);font-size:14px;font-weight:600;color:var(--accent-b);letter-spacing:1px;text-transform:uppercase;">Arduino Uno</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">Traitement & décision</div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;color:var(--accent-o);font-size:20px;">→</div>
+          <div style="background:var(--bg-card);border:1px solid var(--border);padding:20px;text-align:center;">
+            <div style="font-size:24px;margin-bottom:10px;">⚙️</div>
+            <div style="font-family:var(--font-label);font-size:14px;font-weight:600;color:var(--accent-b);letter-spacing:1px;text-transform:uppercase;">Pont en H L298N</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">Contrôle des moteurs DC</div>
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="page-footer">
+        <span>SF-27 · Autonova Industries · 2025–2026</span>
+        <span class="footer-logo">1ÈRE SI</span>
+      </footer>
+    </section>
+
+
+    <!-- ┌──────────────────────────────────
+         PAGE : DÉVELOPPEMENT TECHNIQUE
+         └────────────────────────────────── -->
+    <section id="developpement" class="page">
+      <div class="section-wrap">
+
+        <header class="section-header">
+          <div class="section-tag">Technique</div>
+          <h2 class="section-title">Développement technique</h2>
+          <p class="section-desc">
+            Code embarqué, comparatif des capteurs, modélisation 3D et défis rencontrés
+            tout au long du développement.
+          </p>
+        </header>
+
+        <!-- Tabs -->
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-tab="tab-code">⟨/⟩ Code Arduino</button>
+          <button class="tab-btn" data-tab="tab-capteurs">📡 Capteurs</button>
+          <button class="tab-btn" data-tab="tab-3d">🎨 Modélisation 3D</button>
+          <button class="tab-btn" data-tab="tab-defis">⚠ Défis</button>
+        </div>
+
+        <!-- Tab : Code Arduino -->
+        <div id="tab-code" class="tab-panel active">
+
+          <div class="info-box blue" style="margin-bottom:28px;">
+            <div class="info-box-title">Code de base fourni</div>
+            <p>Nous sommes partis d'un squelette de code fourni par notre enseignant, implémentant uniquement
+            les fonctions d'initialisation des broches et de lecture brute du capteur. Nous avons ensuite
+            développé toute la logique d'évitement, de virage et de recul.</p>
+          </div>
+
+          <h3 style="font-family:var(--font-label);font-size:17px;font-weight:600;margin-bottom:16px;color:var(--text-main);">
+            Code final optimisé — SF27_main.ino
+          </h3>
+
+          <div class="code-panel">
+            <div class="code-header">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div class="code-dots">
+                  <div class="code-dot dot-r"></div>
+                  <div class="code-dot dot-y"></div>
+                  <div class="code-dot dot-g"></div>
+                </div>
+                <span class="code-filename">SF27_main.ino</span>
+              </div>
+              <span class="code-lang">Arduino / C++</span>
+            </div>
+            <div class="code-body">
+              <pre id="arduino-source"><span class="tok-comment">// ================================================
+// Code virtuel
+// SF-27 — Voiture Robot Autonome
+// Autonova Industries · 1ère Sciences de l'Ingénieur
+// Détection par caméra — Version optimisée 2025–2026
+// ================================================</span>
+
+<span class="tok-preprocessor">#include</span> <span class="tok-string">&lt;Pixy2.h&gt;</span>        <span class="tok-comment">// Bibliothèque caméra Pixy2 CMUcam5</span>
+<span class="tok-preprocessor">#include</span> <span class="tok-string">&lt;AFMotor.h&gt;</span>      <span class="tok-comment">// Contrôle moteurs Adafruit Motor Shield</span>
+
+<span class="tok-comment">// ── Paramètres caméra ─────────────────────────────</span>
+<span class="tok-keyword">#define</span> <span class="tok-define">CAM_LARGEUR</span>     316   <span class="tok-comment">// Résolution horizontale Pixy2 (px)</span>
+<span class="tok-keyword">#define</span> <span class="tok-define">CAM_CENTRE</span>      158   <span class="tok-comment">// Centre horizontal de l'image</span>
+<span class="tok-keyword">#define</span> <span class="tok-define">SEUIL_OBSTACLE</span>  3000  <span class="tok-comment">// Aire min. blob = obstacle (px²)</span>
+<span class="tok-keyword">#define</span> <span class="tok-define">MARGE_CENTRE</span>    30    <span class="tok-comment">// Tolérance gauche/droite (px)</span>
+<span class="tok-keyword">#define</span> <span class="tok-define">SIG_OBSTACLE</span>    1     <span class="tok-comment">// Signature couleur = obstacle</span>
+<span class="tok-keyword">#define</span> <span class="tok-define">SIG_LIGNE</span>       2     <span class="tok-comment">// Signature couleur = ligne de guidage</span>
+
+<span class="tok-comment">// ── Paramètres moteurs ────────────────────────────</span>
+<span class="tok-keyword">#define</span> <span class="tok-define">VITESSE_NORMALE</span> 200   <span class="tok-comment">// 0–255</span>
+<span class="tok-keyword">#define</span> <span class="tok-define">VITESSE_LENTE</span>   120
+<span class="tok-keyword">#define</span> <span class="tok-define">VITESSE_RECUL</span>   150
+
+<span class="tok-comment">// ── Objets ───────────────────────────────────────</span>
+<span class="tok-type">Pixy2</span> camera;
+<span class="tok-type">AF_DCMotor</span> moteurGauche(<span class="tok-number">1</span>);   <span class="tok-comment">// Moteur 1 — roue gauche</span>
+<span class="tok-type">AF_DCMotor</span> moteurDroit(<span class="tok-number">2</span>);    <span class="tok-comment">// Moteur 2 — roue droite</span>
+
+<span class="tok-comment">// ── Variables globales ────────────────────────────</span>
+<span class="tok-type">int</span>  nbBlocs      = <span class="tok-number">0</span>;      <span class="tok-comment">// Nombre d'objets détectés</span>
+<span class="tok-type">bool</span> obstacleDetecte = <span class="tok-keyword">false</span>;
+<span class="tok-type">long</span> derniereLecture = <span class="tok-number">0</span>;
+
+<span class="tok-comment">// ─────────────────────────────────────────────────
+// SETUP
+// ─────────────────────────────────────────────────</span>
+<span class="tok-type">void</span> <span class="tok-func">setup</span>() {
+  Serial.<span class="tok-func">begin</span>(<span class="tok-number">115200</span>);
+  Serial.<span class="tok-func">println</span>(<span class="tok-string">"SF-27 — Démarrage système..."</span>);
+
+  <span class="tok-comment">// Initialisation caméra Pixy2 (SPI par défaut)</span>
+  camera.<span class="tok-func">init</span>();
+  camera.changeProg(<span class="tok-string">"color_connected_components"</span>);
+  Serial.<span class="tok-func">println</span>(<span class="tok-string">"Caméra Pixy2 initialisée."</span>);
+
+  moteurGauche.<span class="tok-func">setSpeed</span>(<span class="tok-define">VITESSE_NORMALE</span>);
+  moteurDroit.<span class="tok-func">setSpeed</span>(<span class="tok-define">VITESSE_NORMALE</span>);
+
+  <span class="tok-comment">// Test séquentiel des actionneurs au démarrage</span>
+  <span class="tok-func">avancer</span>(); <span class="tok-func">delay</span>(<span class="tok-number">300</span>);
+  <span class="tok-func">arreter</span>(); <span class="tok-func">delay</span>(<span class="tok-number">200</span>);
+  Serial.<span class="tok-func">println</span>(<span class="tok-string">"Système prêt."</span>);
+}
+
+<span class="tok-comment">// ─────────────────────────────────────────────────
+// BOUCLE PRINCIPALE
+// ─────────────────────────────────────────────────</span>
+<span class="tok-type">void</span> <span class="tok-func">loop</span>() {
+  <span class="tok-comment">// Acquisition image toutes les 60 ms</span>
+  <span class="tok-keyword">if</span> (millis() - derniereLecture > <span class="tok-number">60</span>) {
+    nbBlocs = camera.ccc.<span class="tok-func">getBlocks</span>(<span class="tok-number">255</span>, <span class="tok-number">255</span>);
+    derniereLecture = millis();
+  }
+
+  obstacleDetecte = <span class="tok-keyword">false</span>;
+  <span class="tok-type">int</span> positionObstacle = <span class="tok-number">-1</span>;   <span class="tok-comment">// Position X du centre du blob</span>
+
+  <span class="tok-comment">// Parcourir les blobs détectés par la caméra</span>
+  <span class="tok-keyword">for</span> (<span class="tok-type">int</span> i = <span class="tok-number">0</span>; i &lt; nbBlocs; i++) {
+    Block bloc = camera.ccc.blocks[i];
+
+    <span class="tok-comment">// Filtrer par signature et taille minimum</span>
+    <span class="tok-keyword">if</span> (bloc.m_signature == <span class="tok-define">SIG_OBSTACLE</span> &&
+        (<span class="tok-type">int</span>)bloc.m_width * bloc.m_height > <span class="tok-define">SEUIL_OBSTACLE</span>) {
+
+      obstacleDetecte = <span class="tok-keyword">true</span>;
+      positionObstacle = bloc.m_x;   <span class="tok-comment">// Centre X du blob</span>
+
+      Serial.<span class="tok-func">print</span>(<span class="tok-string">"Obstacle — x:"</span>); Serial.<span class="tok-func">print</span>(bloc.m_x);
+      Serial.<span class="tok-func">print</span>(<span class="tok-string">" aire:"</span>); Serial.<span class="tok-func">println</span>(bloc.m_width * bloc.m_height);
+      <span class="tok-keyword">break</span>;
+    }
+  }
+
+  <span class="tok-comment">// Logique de navigation</span>
+  <span class="tok-keyword">if</span> (!obstacleDetecte) {
+    <span class="tok-comment">// Voie libre — pleine vitesse</span>
+    moteurGauche.<span class="tok-func">setSpeed</span>(<span class="tok-define">VITESSE_NORMALE</span>);
+    moteurDroit.<span class="tok-func">setSpeed</span>(<span class="tok-define">VITESSE_NORMALE</span>);
+    <span class="tok-func">avancer</span>();
+
+  } <span class="tok-keyword">else</span> {
+    <span class="tok-comment">// Obstacle détecté — choisir côté à éviter via position caméra</span>
+    <span class="tok-func">eviterObstacle</span>(positionObstacle);
+  }
+}
+
+<span class="tok-comment">// ─────────────────────────────────────────────────
+// FONCTIONS DE CONTRÔLE
+// ─────────────────────────────────────────────────</span>
+
+<span class="tok-type">void</span> <span class="tok-func">avancer</span>() {
+  moteurGauche.<span class="tok-func">run</span>(FORWARD);
+  moteurDroit.<span class="tok-func">run</span>(FORWARD);
+}
+
+<span class="tok-type">void</span> <span class="tok-func">reculer</span>() {
+  moteurGauche.<span class="tok-func">setSpeed</span>(<span class="tok-define">VITESSE_RECUL</span>);
+  moteurDroit.<span class="tok-func">setSpeed</span>(<span class="tok-define">VITESSE_RECUL</span>);
+  moteurGauche.<span class="tok-func">run</span>(BACKWARD);
+  moteurDroit.<span class="tok-func">run</span>(BACKWARD);
+}
+
+<span class="tok-type">void</span> <span class="tok-func">arreter</span>() {
+  moteurGauche.<span class="tok-func">run</span>(RELEASE);
+  moteurDroit.<span class="tok-func">run</span>(RELEASE);
+}
+
+<span class="tok-type">void</span> <span class="tok-func">tournerGauche</span>(<span class="tok-type">int</span> duree) {
+  moteurGauche.<span class="tok-func">run</span>(BACKWARD);
+  moteurDroit.<span class="tok-func">run</span>(FORWARD);
+  <span class="tok-func">delay</span>(duree);
+}
+
+<span class="tok-type">void</span> <span class="tok-func">tournerDroite</span>(<span class="tok-type">int</span> duree) {
+  moteurGauche.<span class="tok-func">run</span>(FORWARD);
+  moteurDroit.<span class="tok-func">run</span>(BACKWARD);
+  <span class="tok-func">delay</span>(duree);
+}
+
+<span class="tok-comment">// Évitement basé sur la position du blob dans l'image</span>
+<span class="tok-type">void</span> <span class="tok-func">eviterObstacle</span>(<span class="tok-type">int</span> xObstacle) {
+  <span class="tok-func">arreter</span>();
+  <span class="tok-func">delay</span>(<span class="tok-number">200</span>);
+  <span class="tok-func">reculer</span>();
+  <span class="tok-func">delay</span>(<span class="tok-number">400</span>);
+  <span class="tok-func">arreter</span>();
+
+  <span class="tok-comment">// L'obstacle est à droite → tourner à gauche, et vice-versa</span>
+  <span class="tok-keyword">if</span> (xObstacle > <span class="tok-define">CAM_CENTRE</span> + <span class="tok-define">MARGE_CENTRE</span>) {
+    Serial.<span class="tok-func">println</span>(<span class="tok-string">"Obstacle droite → virage gauche"</span>);
+    <span class="tok-func">tournerGauche</span>(<span class="tok-number">500</span>);
+  } <span class="tok-keyword">else if</span> (xObstacle &lt; <span class="tok-define">CAM_CENTRE</span> - <span class="tok-define">MARGE_CENTRE</span>) {
+    Serial.<span class="tok-func">println</span>(<span class="tok-string">"Obstacle gauche → virage droite"</span>);
+    <span class="tok-func">tournerDroite</span>(<span class="tok-number">500</span>);
+  } <span class="tok-keyword">else</span> {
+    <span class="tok-comment">// Obstacle centré → recul prolongé puis virage aléatoire</span>
+    Serial.<span class="tok-func">println</span>(<span class="tok-string">"Obstacle centré → recul + virage"</span>);
+    <span class="tok-func">reculer</span>();
+    <span class="tok-func">delay</span>(<span class="tok-number">300</span>);
+    <span class="tok-func">tournerDroite</span>(<span class="tok-number">600</span>);
+  }
+  <span class="tok-func">arreter</span>();
+}</pre>
+            </div>
+            <div class="code-download-bar">
+              <span style="font-family:var(--font-code);font-size:11px;color:var(--text-dim);">SF27_main.ino · ~95 lignes</span>
+              <button class="download-btn" id="download-code">⬇ Télécharger .ino</button>
+            </div>
+          </div>
+
+          <div class="info-box" style="margin-top:12px;">
+            <div class="info-box-title">Améliorations apportées</div>
+            <p>Par rapport au code de départ : ajout d'un seuil de ralentissement progressif (SEUIL_LENT),
+            d'une lecture comparée gauche/droite pour choisir la meilleure direction,
+            d'un timer millis() pour éviter de bloquer la boucle avec delay(),
+            et d'une routine de test au démarrage.</p>
+          </div>
+        </div>
+
+        <!-- Tab : Capteurs -->
+        <div id="tab-capteurs" class="tab-panel">
+          <div class="info-box blue" style="margin-bottom:28px;">
+            <div class="info-box-title">Choix du capteur</div>
+            <p>Nous avons comparé trois technologies de détection avant de retenir le HC-SR04.
+            Le tableau ci-dessous résume les critères analysés.</p>
+          </div>
+
+          <div class="compare-table-wrap">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Capteur</th>
+                  <th>Technologie</th>
+                  <th>Portée</th>
+                  <th>Précision</th>
+                  <th>Prix</th>
+                  <th>Statut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="chosen">Camera</td>
+                  <td>Lumiere</td>
+                  <td>2 – 400 cm</td>
+                  <td>± 3 mm</td>
+                  <td>~2 €</td>
+                  <td><span class="badge badge-chosen">Retenu ✓</span></td>
+                </tr>
+                <tr>
+                  <td>IR Sharp GP2Y0A</td>
+                  <td>Infrarouge</td>
+                  <td>10 – 80 cm</td>
+                  <td>± 5 mm</td>
+                  <td>~4 €</td>
+                  <td><span class="badge badge-alt">Écarté</span></td>
+                </tr>
+                <tr>
+                  <td>VL53L0X</td>
+                  <td>ToF (Laser)</td>
+                  <td>0 – 200 cm</td>
+                  <td>± 1 mm</td>
+                  <td>~8 €</td>
+                  <td><span class="badge badge-alt">Écarté</span></td>
+                </tr>
+                <tr>
+                  <td>TCRT5000</td>
+                  <td>Infrarouge réfléchi</td>
+                  <td>0 – 3 cm</td>
+                  <td>Présence seule</td>
+                  <td>~0,5 €</td>
+                  <td><span class="badge badge-alt">Écarté</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="info-box" style="margin-top:20px;">
+            <div class="info-box-title">Justification du choix HC-SR04</div>
+            <p>Le HC-SR04 offre le meilleur rapport portée/prix pour notre usage.
+            Sa portée de 400 cm est largement suffisante, sa précision de ± 3 mm convient
+            parfaitement pour une détection d'obstacles, et il est directement compatible
+            avec la bibliothèque NewPing sur Arduino sans pont de tension.</p>
+          </div>
+        </div>
+
+        <!-- Tab : Modélisation 3D -->
+        <div id="tab-3d" class="tab-panel">
+          <div class="info-box blue" style="margin-bottom:28px;">
+            <div class="info-box-title">Logiciel utilisé : Blender 4.x</div>
+            <p>La modélisation de la coque a été réalisée sous Blender, logiciel open-source
+            de modélisation 3D. Nous avons opté pour un design inspiré des monoplaces
+            de Formule E, avec des surfaces NURBS et un rendu Cycles.</p>
+          </div>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-icon">📐</div>
+              <div class="card-title">Conception du châssis</div>
+              <div class="card-body">Modélisation à partir des cotes réelles du robot physique.
+              Respect des gabarits d'empattement et de largeur de voie pour garantir
+              l'ajustement de la coque sur le châssis imprimé.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">💨</div>
+              <div class="card-title">Étude aérodynamique</div>
+              <div class="card-body">La géométrie de la coque a été pensée pour minimiser la
+              traînée : nez arrondi, flancs inclinés, arrière tronqué façon Kamm.
+              Le coefficient Cx estimé est ≈ 0,28 (calcul théorique).</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🖨️</div>
+              <div class="card-title">Préparation impression 3D</div>
+              <div class="card-body">Export STL depuis Blender. Vérification de l'étanchéité
+              du maillage (Mesh Analysis). Épaisseur de paroi minimale de 1,2 mm
+              pour impression FDM en PLA.</div>
+            </div>
+          </div>
+
+          <!-- Placeholder gallery for 3D renders -->
+          <h3 style="font-family:var(--font-label);font-size:17px;font-weight:600;margin:32px 0 16px;color:var(--text-main);">
+            Rendus 3D de la SF-27
+          </h3>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:28px;">
+            <div class="gallery-item" style="height:180px;">
+              <img src="assets/robot-1.jpg" alt="Description de l'image" style="width:100%;height:100%;object-fit:cover">
+              <div class="gallery-overlay"></div>
+              <div class="gallery-label">Vue 3/4 avant</div>
+            </div>
+            <div class="gallery-item" style="height:180px;">
+              <img src="assets/robot-2.png" alt="Description de l'image" style="width:100%;height:100%;object-fit:cover">
+              <div class="gallery-overlay"></div>
+              <div class="gallery-label">Vue de profil</div>
+            </div>
+            <div class="gallery-item" style="height:180px;">
+              <img src="assets/robot-3.png" alt="Description de l'image" style="width:100%;height:100%;object-fit:cover">
+              <div class="gallery-overlay"></div>
+              <div class="gallery-label">Vue dessus (wireframe)</div>
+            </div>
+          </div>
+
+          <div class="info-box warn">
+            <div class="info-box-title">💡 Comment ajouter tes rendus Blender</div>
+            <p>Pour insérer tes propres images : enregistre-les dans le dossier <code style="font-family:var(--font-code);font-size:12px;background:rgba(255,255,255,0.05);padding:2px 6px;">assets/</code>
+            puis remplace les blocs "gallery-placeholder" dans le HTML par une balise
+            <code style="font-family:var(--font-code);font-size:12px;background:rgba(255,255,255,0.05);padding:2px 6px;">&lt;img src="assets/ton-rendu.png" alt="..." style="width:100%;height:100%;object-fit:cover"&gt;</code></p>
+          </div>
+        </div>
+
+        <!-- Tab : Défis rencontrés -->
+        <div id="tab-defis" class="tab-panel">
+
+          <div class="info-box warn" style="margin-bottom:28px;">
+            <div class="info-box-title">⚠ Défi majeur — SolidWorks Flow Simulation</div>
+            <p>La simulation aérodynamique sous SolidWorks a échoué en raison de bugs de maillage
+            et d'une licence incomplète sur les postes scolaires. Nous avons remplacé cette étape
+            par un calcul théorique du coefficient de traînée (formule Cx = 2F_d / (ρ·v²·A)).</p>
+          </div>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-icon">🔧</div>
+              <div class="card-title">Problème : Seuil de détection mal calibré</div>
+              <div class="card-body"><strong>Symptôme :</strong> Le robot s'arrêtait trop tôt (à 60 cm au lieu de 25 cm).
+              <br><strong>Solution :</strong> Ajout d'un seuil à deux niveaux (SEUIL_LENT / SEUIL_STOP)
+              et calibration empirique lors des tests.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🔄</div>
+              <div class="card-title">Problème : Virage asymétrique</div>
+              <div class="card-body"><strong>Symptôme :</strong> Le robot tournait toujours à droite même face à un mur.
+              <br><strong>Solution :</strong> Ajout d'une mesure comparée gauche/droite avant de choisir
+              la direction d'évitement.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">⚡</div>
+              <div class="card-title">Problème : Chute de tension sous charge</div>
+              <div class="card-body"><strong>Symptôme :</strong> L'Arduino redémarrait quand les deux moteurs
+              étaient à pleine puissance.
+              <br><strong>Solution :</strong> Alimentation séparée pour les moteurs (7,4 V Li-ion)
+              et pour l'Arduino (USB/5 V).</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📦</div>
+              <div class="card-title">Problème : Import Blender → SolidWorks</div>
+              <div class="card-body"><strong>Symptôme :</strong> Le fichier STL exporté depuis Blender
+              ne s'importait pas correctement dans SolidWorks.
+              <br><strong>Solution :</strong> Conversion intermédiaire via FreeCAD pour obtenir
+              un fichier STEP utilisable.</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <footer class="page-footer">
+        <span>SF-27 · Autonova Industries · 2025–2026</span>
+        <span class="footer-logo">1ÈRE SI</span>
+      </footer>
+    </section>
+
+
+    <!-- ┌──────────────────────────────────
+         PAGE : GALERIE
+         └────────────────────────────────── -->
+    <section id="galerie" class="page">
+      <div class="section-wrap">
+
+        <header class="section-header">
+          <div class="section-tag">Visuels</div>
+          <h2 class="section-title">Galerie du projet</h2>
+          <p class="section-desc">
+            Photos du robot physique, rendus 3D de la coque et captures d'écran
+            du processus de développement.
+          </p>
+        </header>
+
+        <div class="info-box warn" style="margin-bottom:32px;">
+          <div class="info-box-title">📷 Comment ajouter tes photos</div>
+          <p>Copie tes fichiers image dans le dossier <code style="font-family:var(--font-code);font-size:12px;background:rgba(255,255,255,0.05);padding:2px 6px;">assets/</code>,
+          puis remplace le contenu de chaque bloc <code style="font-family:var(--font-code);font-size:12px;background:rgba(255,255,255,0.05);padding:2px 6px;">gallery-placeholder</code>
+          par une balise <code style="font-family:var(--font-code);font-size:12px;background:rgba(255,255,255,0.05);padding:2px 6px;">&lt;img&gt;</code> avec src="assets/ta-photo.jpg".
+          Clique sur une vignette pour voir l'aperçu agrandi.</p>
+        </div>
+
+        <h3 style="font-family:var(--font-label);font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;">
+          Robot physique
+        </h3>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="assets/robot-7.png" alt="Description de l'image" style="width:100%;height:100%;object-fit:cover">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-label">Robot assemblé — vue 3/4</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/robot-4.jpg" alt="Description de l'image" style="width:100%;height:100%;object-fit:cover">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-label">Carte Arduino & câblage</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/robot-5.jpg" alt="Description de l'image" style="width:100%;height:100%;object-fit:cover">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-label">Capteur Video (avant)</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/robot-6.png" alt="Description de l'image" style="width:100%;height:100%;object-fit:cover">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-label">Test d'évitement d'obstacles</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3 style="font-family:var(--font-label);font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;">
+          Modélisation 3D Blender
+        </h3>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="assets/robot-1.jpg" alt="Description de l'image" style="width:100%;height:100%;object-fit:cover">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-label">Rendu Cycles — vue avant</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/robot-2.png" alt="Description de l'image" style="width:100%;height:100%;object-fit:cover">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-label">Wireframe — maillage polygonal</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/robot-3.png" alt="Description de l'image" style="width:100%;height:100%;object-fit:cover">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-label">Vue dessus — plan de coque</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3 style="font-family:var(--font-label);font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;">
+          Captures IDE & développement
+        </h3>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <div class="gallery-placeholder-icon">💻</div>
+              <div class="gallery-placeholder-text">Capture Arduino IDE<br><small style="font-size:10px;opacity:0.5;">assets/ide-1.png</small></div>
+            </div>
+            <div class="gallery-overlay"></div>
+            <div class="gallery-label">Arduino IDE — moniteur série</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/robot-4.jpg" alt="Description de l'image" style="width:100%;height:100%;object-fit:cover">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-label">Schéma de câblage Fritzing</div>
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="page-footer">
+        <span>SF-27 · Autonova Industries · 2025–2026</span>
+        <span class="footer-logo">1ÈRE SI</span>
+      </footer>
+    </section>
+
+
+    <!-- ┌──────────────────────────────────
+         PAGE : ÉQUIPE
+         └────────────────────────────────── -->
+    <section id="equipe" class="page">
+      <div class="section-wrap">
+
+        <header class="section-header">
+          <div class="section-tag">Notre groupe</div>
+          <h2 class="section-title">L'équipe Autonova</h2>
+          <p class="section-desc">
+            Trois élèves de 1ère Sciences de l'Ingénieur, avec des rôles complémentaires
+            pour couvrir la programmation, la modélisation 3D et l'aérodynamique.
+          </p>
+        </header>
+
+        <div class="team-grid">
+
+          <!-- Timo -->
+          <div class="team-card">
+            <div class="team-avatar">TC</div>
+            <div class="team-name">Timo Chapuis</div>
+            <div class="team-role">Responsable Programmation & Systèmes Embarqués</div>
+            <div class="team-desc">
+              En charge de l'intégralité du code Arduino : développement des fonctions de
+              contrôle moteur, logique d'évitement, optimisation du firmware et débogage
+              électronique. A géré l'intégration des capteurs et les tests sur piste.
+              <div class="team-skills">
+                <span class="skill-tag">Arduino C++</span>
+                <span class="skill-tag">NewPing</span>
+                <span class="skill-tag">AFMotor</span>
+                <span class="skill-tag">Électronique</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pierre-Gaspard -->
+          <div class="team-card">
+            <div class="team-avatar">PG</div>
+            <div class="team-name">Pierre-Gaspard Lemaitre</div>
+            <div class="team-role">Responsable 3D & Aérodynamique</div>
+            <div class="team-desc">
+              Chef de la modélisation 3D de la coque SF-27 sous Blender. Responsable de
+              l'étude aérodynamique et des tentatives de simulation sous SolidWorks.
+              A réalisé les rendus finaux et la préparation des fichiers pour impression 3D.
+              <div class="team-skills">
+                <span class="skill-tag">Blender 4</span>
+                <span class="skill-tag">SolidWorks</span>
+                <span class="skill-tag">Impression 3D</span>
+                <span class="skill-tag">Aérodynamique</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charlie -->
+          <div class="team-card">
+            <div class="team-avatar">CD</div>
+            <div class="team-name">Charlie Dechaux-Blanc Vizcaino</div>
+            <div class="team-role">Co-responsable 3D & Aérodynamique</div>
+            <div class="team-desc">
+              Co-pilote de la modélisation 3D, en charge des calculs théoriques de traînée,
+              de la préparation de la présentation Canva et du rapport de projet.
+              A également contribué au débogage du code et aux tests fonctionnels.
+              <div class="team-skills">
+                <span class="skill-tag">Blender 4</span>
+                <span class="skill-tag">Calcul Cx</span>
+                <span class="skill-tag">Canva</span>
+                <span class="skill-tag">Rédaction</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Autonova Industries card -->
+        <h3 style="font-family:var(--font-label);font-size:20px;font-weight:600;margin-bottom:20px;color:var(--text-main);">
+          Autonova Industries
+        </h3>
+        <div class="info-box blue">
+          <div class="info-box-title">Notre entreprise fictive</div>
+          <p>
+            "Autonova Industries" est le nom de l'entreprise fictive que nous avons créée pour porter
+            notre projet. Inspiré des constructeurs automobiles innovants, ce nom symbolise notre
+            ambition : développer une mobilité autonome accessible, en partant d'une carte Arduino
+            et d'un logiciel open-source. Le nom de notre modèle, SF-27, rend hommage au format
+            des monoplaces de Formule E (SF pour "Super Formula", 27 pour l'année scolaire 2025–2026).
+          </p>
+        </div>
+
+      </div>
+
+      <footer class="page-footer">
+        <span>SF-27 · Autonova Industries · 2025–2026</span>
+        <span class="footer-logo">1ÈRE SI</span>
+      </footer>
+    </section>
+
+
+    <!-- ┌──────────────────────────────────
+         PAGE : REMERCIEMENTS
+         └────────────────────────────────── -->
+    <section id="remerciements" class="page">
+      <div class="section-wrap">
+
+        <header class="section-header">
+          <div class="section-tag">Crédits</div>
+          <h2 class="section-title">Remerciements</h2>
+          <p class="section-desc">
+            Ce projet n'aurait pas vu le jour sans l'aide de nos enseignants
+            et les ressources libres dont nous avons pu bénéficier.
+          </p>
+        </header>
+
+        <h3 style="font-family:var(--font-label);font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;">
+          Nos encadrants
+        </h3>
+
+        <div class="thanks-grid">
+          <div class="thanks-card">
+            <div class="thanks-icon">👨‍🏫</div>
+            <div class="thanks-name">Notre professeur de SI</div>
+            <div class="thanks-role">Encadrant principal du projet</div>
+            <div class="thanks-desc">
+              Pour nous avoir fourni le code de base Arduino, accompagnés tout au long
+              du projet, et orientés lors des phases de débogage et de test.
+              <br><br>
+              <em style="color:var(--text-dim);font-size:12px;"></em>
+            </div>
+          </div>
+          <div class="thanks-card">
+            <div class="thanks-icon">👩‍💻</div>
+            <div class="thanks-name">Professeur de Mathématiques</div>
+            <div class="thanks-role">Soutien calcul aérodynamique</div>
+            <div class="thanks-desc">
+              Pour l'aide apportée à la formulation des équations de traînée
+              et à l'interprétation des résultats de calcul théorique du coefficient Cx.
+              <br><br>
+              <em style="color:var(--text-dim);font-size:12px;"></em>
+            </div>
+          </div>
+          <div class="thanks-card">
+            <div class="thanks-icon">🏫</div>
+            <div class="thanks-name">Notre lycée</div>
+            <div class="thanks-role">Ressources & matériel</div>
+            <div class="thanks-desc">
+              Pour la mise à disposition du matériel électronique (Arduino, moteurs, capteurs),
+              des postes informatiques équipés de SolidWorks et de l'accès à l'imprimante 3D.
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3 style="font-family:var(--font-label);font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;">
+          Ressources utilisées
+        </h3>
+
+        <div class="thanks-grid">
+          <div class="thanks-card">
+            <div class="thanks-icon">📚</div>
+            <div class="thanks-name">Bibliothèque NewPing</div>
+            <div class="thanks-role">Open-source · Tim Eckel</div>
+            <div class="thanks-desc">Gestion optimisée du capteur ultrasonique HC-SR04.
+            Évite les bugs de timeout et améliore la stabilité des mesures de distance.</div>
+          </div>
+          <div class="thanks-card">
+            <div class="thanks-icon">📚</div>
+            <div class="thanks-name">Bibliothèque AFMotor</div>
+            <div class="thanks-role">Open-source · Adafruit</div>
+            <div class="thanks-desc">Contrôle simplifié des moteurs DC via le shield Adafruit.
+            Permet de gérer vitesse et direction avec une API claire et documentée.</div>
+          </div>
+          <div class="thanks-card">
+            <div class="thanks-icon">🎨</div>
+            <div class="thanks-name">Blender Foundation</div>
+            <div class="thanks-role">Logiciel open-source</div>
+            <div class="thanks-desc">Modélisation 3D libre et gratuite utilisée pour concevoir
+            l'intégralité de la coque aérodynamique de la SF-27.</div>
+          </div>
+          <div class="thanks-card">
+            <div class="thanks-icon">🌐</div>
+            <div class="thanks-name">Arduino.cc & forums</div>
+            <div class="thanks-role">Documentation officielle</div>
+            <div class="thanks-desc">Documentation de référence pour la programmation Arduino,
+            et communauté en ligne pour résoudre les problèmes de câblage et de code.</div>
+          </div>
+          <div class="thanks-card">
+            <div class="thanks-icon">🎯</div>
+            <div class="thanks-name">Canva</div>
+            <div class="thanks-role">Présentation du projet</div>
+            <div class="thanks-desc">Outil utilisé pour réaliser notre présentation visuelle
+            "SUPER-CAR AUTONOME" (SF-27 · Autonova Industries) remise en classe.</div>
+          </div>
+          <div class="thanks-card">
+            <div class="thanks-icon">💡</div>
+            <div class="thanks-name">Thingiverse & tutoriels YouTube</div>
+            <div class="thanks-role">Inspiration & apprentissage</div>
+            <div class="thanks-desc">Projets open-source de robots autonomes ayant servi
+            d'inspiration pour le câblage, les algorithmes d'évitement et la conception mécanique.</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Final message -->
+        <div style="text-align:center;padding:40px 0;">
+          <div style="font-family:var(--font-title);font-size:32px;font-weight:700;color:var(--accent-o);margin-bottom:12px;">SF-27</div>
+          <div style="font-family:var(--font-label);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;">Autonova Industries · 1ère Sciences de l'Ingénieur</div>
+          <p style="color:var(--text-muted);max-width:480px;margin:0 auto;font-size:15px;line-height:1.75;">
+            Merci à tous ceux qui ont contribué à faire de ce projet une expérience
+            d'apprentissage riche et mémorable.
+          </p>
+        </div>
+
+      </div>
+
+      <footer class="page-footer">
+        <span>SF-27 · Autonova Industries · 2025–2026</span>
+        <span class="footer-logo">1ÈRE SI</span>
+      </footer>
+    </section>
+
+  </main><!-- /main -->
+</div><!-- /app -->
+
+<script src="js/main.js"></script>
+</body>
+</html>
