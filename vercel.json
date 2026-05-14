@@ -1,14 +1,9 @@
 {
   "version": 2,
-  "functions": {
-    "api/*.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/proxy",
-      "dest": "/api/proxy.js"
+      "source": "/api/proxy",
+      "destination": "/api/proxy.js"
     }
   ]
 }
