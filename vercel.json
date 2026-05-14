@@ -1,26 +1,14 @@
 {
   "version": 2,
   "functions": {
-    "api/proxy.js": {
-      "runtime": "nodejs20.x",
-      "maxDuration": 15
+    "api/*.js": {
+      "runtime": "nodejs20.x"
     }
   },
   "routes": [
     {
       "src": "/api/proxy",
-      "dest": "/api/proxy.js",
-      "methods": ["POST", "OPTIONS"]
-    }
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options",        "value": "DENY"    },
-        { "key": "Cache-Control",           "value": "no-store" }
-      ]
+      "dest": "/api/proxy.js"
     }
   ]
 }
