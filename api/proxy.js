@@ -31,7 +31,7 @@ function setCORSHeaders(req, res) {
   }
 
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-CrypView-Origin');
   res.setHeader('Access-Control-Max-Age', '86400'); // cache preflight 24h
 }
 
@@ -102,6 +102,13 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'backend doit être "gemini" ou "mistral".' });
   }
 
+  const originToken = req.headers['x-crypview-origin'];
+  const expectedToken = process.env.CRYPVIEW_ORIGIN_SECRET;
+  if (expectedToken && originToken !== expectedToken) {
+    return res.status(403).json({ error: 'Forbidden.' });
+  }
+
+  
   // ── Dispatch ────────────────────────────────────────────────
   try {
     let data;
